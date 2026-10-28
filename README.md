@@ -1,30 +1,31 @@
 # rm2-hello
 
-A tiny reMarkable 2 app written from scratch in Rust. It draws on the e-ink screen and exits when
-you tap. No Qt, nothing to install on the tablet beyond AppLoad, one static binary.
+<img width="851" height="1220" alt="image" src="https://github.com/user-attachments/assets/cb47c267-9589-4a7d-b0e7-209d6ed2f825" />
 
-You can try it on your PC first: `cargo run` opens the tablet in a browser window where the mouse
-is your finger (left button) or pen (right button). Same code, same events as on the device.
+"Hello World" program for the Remarkable 2. It draws on the e-ink screen and exits when you tap.
+
+You can try it on your PC first: `cargo run` opens the tablet in a window where the mouse emulates your finger/pen.
 
 ## Set up Windows from nothing
 
-You need Git for Windows (it brings Git Bash, `ssh` and `scp`) and Rust. Nothing else: no Visual
-Studio, no C compiler. Open PowerShell once for the two installs:
+You only need to open PowerShell to install dependencies:
 
 ```powershell
 winget install --id Git.Git -e
 winget install --id Rustlang.Rustup -e
 ```
 
-Close that window. From now on use **Git Bash** (Start menu → Git Bash). In it:
+This installs Git for Windows and Rust.
+
+Once installed, use the newly installed **Git Bash** (Start menu → Git Bash), and run:
 
 ```bash
 rustup default stable-gnu                          # the Rust toolchain that needs no Visual Studio
-rustup target add armv7-unknown-linux-musleabihf   # the tablet's CPU
-cargo --version                                    # prints a version: you're set
+rustup target add armv7-unknown-linux-musleabihf   # the tablet's CPU for rust to build for
+cargo --version                                    # if you see it prints a version, you're done
 ```
 
-If `rustup` or `cargo` is "command not found", close Git Bash and open it again; the installer
+If `rustup` or `cargo` is **"command not found"**, close Git Bash and open it again; the installer
 changed PATH but the open window doesn't know yet. Already have Visual Studio and rustup's default
 MSVC toolchain? That works too; skip the `stable-gnu` line.
 
