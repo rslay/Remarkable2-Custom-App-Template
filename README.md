@@ -4,20 +4,20 @@
 
 "Hello World" program for the Remarkable 2. It draws on the e-ink screen and exits when you tap.
 
-You can try it on your PC first: `cargo run` opens the tablet in a window where the mouse emulates your finger/pen.
+Follow the steps below, and you can run it on your PC: `cargo run` opens the tablet in a window where the mouse emulates your finger/pen.
 
-## Set up Windows from nothing
+## Set up Windows
 
 You only need to open PowerShell to install dependencies:
 
 ```powershell
-winget install --id Git.Git -e
 winget install --id Rustlang.Rustup -e
+winget install --id Git.Git -e
 ```
 
-This installs Git for Windows and Rust.
+This installs Rust and Git for Windows.
 
-Once installed, use the newly installed **Git Bash** (Start menu → Git Bash), and run:
+Once installed, use the new **Git Bash** terminal (Start menu → Git Bash), and run:
 
 ```bash
 rustup default stable-gnu                          # the Rust toolchain that needs no Visual Studio
